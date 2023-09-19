@@ -46,8 +46,8 @@ $movie2 = new Movie('Titanic', 'James Cameron', 'en', ['Romantico', 'Storico'] ,
                     echo '</li>'
                     ?>
                     
-                    <?php
-                    '<li class="list-group-item">' .$movie1->getLength() .'</li>'
+                    <?php echo
+                    '<li class="list-group-item">' .$movie1->getLength() .' min</li>'
                     ?>
 
                 </ul>
@@ -75,8 +75,8 @@ $movie2 = new Movie('Titanic', 'James Cameron', 'en', ['Romantico', 'Storico'] ,
                     echo '</li>'
                     ?>
                     
-                    <?php
-                    '<li class="list-group-item">' .$movie2->getLength() .'</li>'
+                    <?php echo
+                    '<li class="list-group-item">' .$movie2->getLength() .' min</li>'
                     ?>
                     
                 </ul>
