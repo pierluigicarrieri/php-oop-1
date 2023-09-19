@@ -2,14 +2,12 @@
 
 require_once __DIR__ . '/Movie.php';
 
-$movie1 = new Movie('Il Padrino', 'Francis Ford Coppola', 'en', 175);
+$movie1 = new Movie('Il Padrino', 'Francis Ford Coppola', 'en', ['Gangster', 'Thriller'], 175);
 
-$movie2 = new Movie('Titanic', 'James Cameron', 'en', 195);
+$movie2 = new Movie('Titanic', 'James Cameron', 'en', ['Romantico', 'Storico'] , 195);
 
 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -37,7 +35,19 @@ $movie2 = new Movie('Titanic', 'James Cameron', 'en', 195);
                     '<li class="list-group-item">' .$movie1->getTitle() .'</li>'
                     .'<li class="list-group-item">' .$movie1->getDirector() .'</li>'
                     .'<li class="list-group-item">' .$movie1->getOriginalLanguage() .'</li>'
-                    .'<li class="list-group-item">' .$movie1->getLength() .'</li>'
+                    ?>
+
+                    <?php
+                    $genresArray = $movie1->getGenres();
+                    echo '<li class="list-group-item">';
+                    for ($i = 0; $i < count($genresArray); $i++) {
+                        echo "$genresArray[$i] ";
+                    }
+                    echo '</li>'
+                    ?>
+                    
+                    <?php
+                    '<li class="list-group-item">' .$movie1->getLength() .'</li>'
                     ?>
 
                 </ul>
@@ -54,7 +64,19 @@ $movie2 = new Movie('Titanic', 'James Cameron', 'en', 195);
                     '<li class="list-group-item">' .$movie2->getTitle() .'</li>'
                     .'<li class="list-group-item">' .$movie2->getDirector() .'</li>'
                     .'<li class="list-group-item">' .$movie2->getOriginalLanguage() .'</li>'
-                    .'<li class="list-group-item">' .$movie2->getLength() .'</li>'
+                    ?>
+
+                    <?php
+                    $genresArray = $movie2->getGenres();
+                    echo '<li class="list-group-item">';
+                    for ($i = 0; $i < count($genresArray); $i++) {
+                        echo "$genresArray[$i] ";
+                    }
+                    echo '</li>'
+                    ?>
+                    
+                    <?php
+                    '<li class="list-group-item">' .$movie2->getLength() .'</li>'
                     ?>
                     
                 </ul>

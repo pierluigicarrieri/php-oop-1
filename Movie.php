@@ -2,11 +2,12 @@
 
 class Movie {
 
-    public function __construct($_title, $_director, $_original_language, $_lenght)
+    public function __construct($_title, $_director, $_original_language, $_genres, $_lenght)
     {
         $this->setTitle($_title);
         $this->setDirector($_director);
         $this->setOriginalLanguage($_original_language);
+        $this->setGenres($_genres);
         $this->setLength($_lenght);
     }
 
@@ -34,6 +35,14 @@ class Movie {
         return $this->original_language;
     }
 
+    public function setGenres($genres) {
+        $this->genres = $genres;
+    }
+
+    public function getGenres() {
+        return $this->genres;
+    }
+
     public function setLength($length) {
         $this->length = $length;
     }
@@ -42,10 +51,11 @@ class Movie {
         return $this->length;
     }
 
-    private $title;
-    private $director;
-    private $original_language;
-    private $length;
+    private string $title = '';
+    private string $director = '';
+    private string $original_language = '';
+    private array $genres = [];
+    private int $length = 0;
 
 }
 
